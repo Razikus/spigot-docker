@@ -12,6 +12,9 @@ You can also map volumes, like plugins:
 
 ``` docker run -v $(pwd)/plugins:/plugins -e ACCEPTEULA=true -p 25565:25565 -d razikus/spigotserver:latest ```
 
+You can use alse fastservercreator.sh that will get from inside server.properties, bukkit.yml, spigot.yml and will volume plugins
+
+``` ./fastservercreator.sh ```
 
 # Purpouse
 Easier plugin testing (will make tutorial later).
