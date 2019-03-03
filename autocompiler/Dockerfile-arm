@@ -1,0 +1,15 @@
+FROM razikus/armjdk:oracle-8-jdk
+ENV BUILDTOOLSVERSION=https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+
+
+RUN apt update && apt install -y git
+RUN apt install -y wget
+RUN wget -O /tools.jar $BUILDTOOLSVERSION
+
+VOLUME /artifacts
+
+ADD entrypoint.sh /entrypoint.sh
+
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
+
+
